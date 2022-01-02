@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/logo.png" type="image/png" />
+    <title>Video Call</title>
+    <link rel="stylesheet" href="{% static 'call.css' %}">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 24px;
+            min-height: 90vh;
+        }
+    </style>
+
+    <script>
+        let myName;
+    </script>
+</head>
+
+<body>
+    <div>
+        <div>
+            <!-- to input username and login -->
+            <div id="userName">
+                <div style="display: flex; flex-direction: column; align-items: center; width: 300px;">
+                    <input placeholder="What should we call you?"
+                        style="text-align:center; height: 50px; font-size: xx-large;" type="text" name=""
+                        id="userNameInput" value="as">
+                    <div style="height: 5px;"></div>
+                    <button onclick="login()" id="online" class="actionButton">Login</button>
+                </div>
+            </div>
+
+            <!-- to display current login user information  -->
+            <div id="userInfo">
+                <div style="display: flex; flex-direction: column; align-items: center; width: 300px;">
+                    <h1>Hello, <span id="nameHere"></span></h1>
+                </div>
+
+            </div>
+
+            <!-- to make a call with name -->
+            <div id="call">
+            </div>
+
+            <!-- to show incommming call and accept -->
+            <div id="answer">
+                <div class="incomingWrapper">
+                    <div class="itemWrapper">
+                        <h2>Incomming Call</h2>
+                    </div>
+                    <div class="itemWrapper">
+                        <img id="profileImageA" style="padding: 30px; width: 140px; height: 140px;"
+                            src="/static/profile.png" alt="">
+                    </div>
+                    <div class="itemWrapper">
+                        <h2 style="line-height: 0px;"><span id="callerName"></span></h2>
+                    </div>
+                    <div class="itemWrapper" style="display: flex; flex-direction: row; margin-bottom: 20px;">
+                        <button class="actionButton" onclick="answer()">Answer</button>
+                        <button class="actionButton" onclick="decline()">Decline</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- to show call in progress call -->
+            <div id="inCall">
+                <div class="incomingWrapper">
+                    <div class="itemWrapper">
+                        <h3>On Call With</h3>
+                        <h2 style="line-height: 0px;"><span id="otherUserNameC"></span></h2>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <!-- to show local and remote video -->
+            <div id="videos">
+                <div id="vid" style="position:absolute; top:0; right:0; padding-right: 20px; padding-top: 20px">
+                    <video width="100px" id="localVideo" autoplay muted playsinline></video>
+                    <button id="btn-toggle-audio">Audio Mute</button>
+                    <button id="btn-toggle-video">Video Mute</button>
+                   <button id="disconnect" onclick="callended();window.location.replace('/video/')">Disconnect</button>
+                </div>
+                <div id="dis">
+                    <p>You'r Call Has Been DisConnected By <b>Doctor</b></p>
+                    <a href="/video/">Please TryAgain Later or Contact to Doctor</a>
+                </div>
+                <div id="remoteVideoDiv">
+                    <video style="width: 500px;" id="remoteVideo" autoplay playsinline></video>
+                </div>
+            </div>
+            <div style="flex-grow: 1;">
+            </div>
+        </div>
+    </div>
+    <script src="/static/call.js"></script>
+    <script>
+        document.getElementById("call").style.display = "none";
+        document.getElementById("userInfo").style.display = "none";
+        document.getElementById("answer").style.display = "none";
+        document.getElementById("inCall").style.display = "none";
+        document.getElementById("dis").style.display = "none";
+        document.getElementById("videos").style.display = "none";
+
+    </script>
+    <script>
+        function login() {
+            let userName = document.getElementById("userNameInput").value;
+            myName = userName;
+            document.getElementById("userName").style.display = "none";
+            document.getElementById("call").style.display = "block";
+
+            document.getElementById("nameHere").innerHTML = userName;
+            document.getElementById("userInfo").style.display = "block";
+
+            connectSocket();
+        }
+        document.getElementById("online").click();
+    </script>
+</body>
+
+</html>
