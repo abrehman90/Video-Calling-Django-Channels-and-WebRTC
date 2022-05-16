@@ -2,7 +2,7 @@
 
 # Hi, I'm Abdul Rehman! 👋
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=abrehman90&hide=contribs,prs&count_private=true&show_icons=true&theme=dark)
+<!-- ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=abrehman90&hide=contribs,prs&count_private=true&show_icons=true&theme=dark) -->
 
 ### Stack we used
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
