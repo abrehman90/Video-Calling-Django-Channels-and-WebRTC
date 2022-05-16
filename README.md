@@ -1,7 +1,13 @@
 # Video Calling Django Channels and WebRTC [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+
 # Hi, I'm Abdul Rehman! 👋
+
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=abrehman90&hide=contribs,prs&count_private=true&show_icons=true&theme=dark)
 
+### Stack we used
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 #### CAUTION: THIS REPOSITORY IS STILL UNDER DEVELOPMENT AND TESTING! SOME ISSUES STILL NEED TO BE RESOLVED!
 
